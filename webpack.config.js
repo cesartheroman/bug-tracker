@@ -1,18 +1,45 @@
 const path = require('path');
 
+const babelOptions = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        modules: false,
+      },
+    ],
+    '@babel/preset-react',
+  ],
+};
+
 module.exports = {
   entry: './client/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.json'],
-  },
   module: {
     rules: [
-      // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
-      { test: /\.tsx?$/, use: ['ts-loader'], exclude: /node_modules/ },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-typescript'],
+            },
+          },
+        ],
+      },
+      {
+        test: /\.ts(x)?$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader',
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.json'],
   },
 };
