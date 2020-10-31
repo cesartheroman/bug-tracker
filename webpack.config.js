@@ -1,17 +1,5 @@
 const path = require('path');
 
-const babelOptions = {
-  presets: [
-    [
-      '@babel/preset-env',
-      {
-        modules: false,
-      },
-    ],
-    '@babel/preset-react',
-  ],
-};
-
 module.exports = {
   entry: './client/index.tsx',
   output: {
