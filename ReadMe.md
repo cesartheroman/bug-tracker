@@ -1,1 +1,1 @@
-<h1>Bug Tracker App</h1>
+<h1>Project/Bug Tracker App</h1>
