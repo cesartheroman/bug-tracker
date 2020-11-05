@@ -1,0 +1,7 @@
+{
+  "watch": ["server"],
+  "ext": "ts,json",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "ts-node server/index.ts",
+  "restartable": "rs"
+}
