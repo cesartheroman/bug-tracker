@@ -16,10 +16,8 @@ app.get('/', (req: express.Request, res: express.Response) => {
   res.status(200);
 });
 
-const start = () => {
+export default function start(): void {
   app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
   });
-};
-
-export default start;
+}
