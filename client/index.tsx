@@ -1,9 +1,5 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-// import App from './components/App';
-import Hello from './components/Hello';
+import App from './components/App';
 
-render(
-  <Hello name="TypeScript" enthusiasmLevel={10} />,
-  document.getElementById('root') as HTMLElement
-);
+render(<App name="Cesar" />, document.getElementById('root') as HTMLElement);
