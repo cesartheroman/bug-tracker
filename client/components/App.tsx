@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './styles.css';
 
 interface Props {
   name: string;
@@ -15,7 +16,7 @@ class App extends React.Component<Props, State> {
   render() {
     const { name, message = 'henlo' } = this.props;
     return (
-      <div>
+      <div className="hello">
         <h1>
           Hi, my name is: {name}, this is the count: {this.state.count}, and
           this is the message: {message}!
