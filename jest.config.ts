@@ -7,4 +7,5 @@ export default {
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
+  setupFilesAfterEnv: ['<rootDir>/client/setupEnzyme.ts'],
 };

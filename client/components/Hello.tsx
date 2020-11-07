@@ -1,4 +1,5 @@
 import * as React from 'react';
+// import './styles.css';
 
 export interface Props {
   name: string;
@@ -20,20 +21,20 @@ function Hello({ name, enthusiasmLevel = 1 }: Props) {
 }
 
 //optional class version of this
-class Hello1 extends React.Component<Props, object> {
-  render() {
-    const { name, enthusiasmLevel = 1 } = this.props;
+// class Hello1 extends React.Component<Props, object> {
+//   render() {
+//     const { name, enthusiasmLevel = 1 } = this.props;
 
-    if (enthusiasmLevel <= 0)
-      throw new Error('You could be a little more enthusiastic. :D');
+//     if (enthusiasmLevel <= 0)
+//       throw new Error('You could be a little more enthusiastic. :D');
 
-    return (
-      <div>
-        <div>Hello {name + getExclamationMarks(enthusiasmLevel)}</div>
-      </div>
-    );
-  }
-}
+//     return (
+//       <div>
+//         <div>Hello {name + getExclamationMarks(enthusiasmLevel)}</div>
+//       </div>
+//     );
+//   }
+// }
 
 export default Hello;
 

@@ -8,10 +8,6 @@ const config: webpack.Configuration = {
     filename: 'bundle.js',
   },
   watch: true,
-  watchOptions: {
-    aggregateTimeout: 200,
-    poll: 1000,
-  },
   module: {
     rules: [
       {
@@ -31,10 +27,27 @@ const config: webpack.Configuration = {
         exclude: /node_modules/,
         loader: 'ts-loader',
       },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-modules-typescript-loader',
+            options: {
+              mode: process.env.CI ? 'verify' : 'emit',
+            },
+          },
+          {
+            loader: 'css-loader',
+          },
+        ],
+      },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.json'],
+    extensions: ['.tsx', '.ts', '.js', '.json', '.css'],
   },
 };
 
