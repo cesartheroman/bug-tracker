@@ -4,7 +4,7 @@ import cors from 'cors';
 import { json, urlencoded } from 'body-parser';
 
 const app = express();
-let port: string = process.env.PORT || '8000';
+const port: string = process.env.PORT || '8000';
 
 app.use(cors());
 app.use(json());
@@ -18,6 +18,7 @@ app.get('/', (req: express.Request, res: express.Response) => {
 
 export default function start(): void {
   app.listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log(`App listening at http://localhost:${port}`);
   });
 }

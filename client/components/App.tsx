@@ -11,15 +11,18 @@ interface State {
 }
 
 class App extends React.Component<Props, State> {
-  state: State = { count: 3 };
+  constructor(props: Props) {
+    super(props);
+    this.state = { count: 3 };
+  }
 
   render() {
     const { name, message = 'henlo' } = this.props;
+    const { count } = this.state;
     return (
       <div className="hello">
         <h1>
-          Hi, my name is: {name}, this is the count: {this.state.count}, and
-          this is the message: {message}!
+          Hi, my name is: {name}, this is the count: {count}, and this is the message: {message}!
         </h1>
       </div>
     );

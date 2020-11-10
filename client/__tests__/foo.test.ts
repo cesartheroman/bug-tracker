@@ -1,4 +1,4 @@
-import { sum } from '../components/foo';
+import sum from '../components/foo';
 
 test('basic', async () => {
   expect(sum()).toBe(0);
